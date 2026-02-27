@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script de Atendimento Dra. Valéria - Protocolo Major</title>
+    <meta name="description" content="Scripts de atendimento magnético e protocolos de experiência clínica alto luxo.">
+
+    <!-- Open Graph / WhatsApp / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Script de Atendimento Dra. Valéria - Protocolo Major">
+    <meta property="og:description"
+        content="Scripts de atendimento magnético e protocolos de experiência clínica alto luxo.">
+    <meta property="og:site_name" content="Clínica Dra. Valéria Cabral">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Script de Atendimento Dra. Valéria - Protocolo Major">
+    <meta property="twitter:description"
+        content="Scripts de atendimento magnético e protocolos de experiência clínica alto luxo.">
+    <meta property="twitter:image"
+        content="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1200&auto=format&fit=crop">
+    <link rel="stylesheet" href="./style.css">
+    <script type="module" src="./app.js" defer></script>
+</head>
+
+<body>
+
+    <!-- LOGIN OVERLAY -->
+    <div id="loginOverlay" class="login-overlay">
+        <div class="login-card">
+            <div class="login-logo">
+                <div class="login-logo-line"></div>
+                <p class="login-eyebrow">Protocolo major</p>
+                <h1 class="login-title">Clínica Dra.<br><em>Valéria Cabral</em></h1>
+                <div class="login-logo-line"></div>
+            </div>
+            <form id="loginForm" class="login-form" novalidate>
+                <div class="login-field">
+                    <label for="loginUser">Usuário</label>
+                    <input type="text" id="loginUser" autocomplete="username" placeholder="Digite seu usuário" />
+                </div>
+                <div class="login-field">
+                    <label for="loginPass">Senha</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="loginPass" autocomplete="current-password"
+                            placeholder="Digite sua senha" />
+                        <button type="button" id="togglePassword" class="password-toggle"
+                            aria-label="Mostrar/Ocultar senha" title="Mostrar/Ocultar senha">
+                            <span class="eye-icon" aria-hidden="true">👁️</span>
+                        </button>
+                    </div>
+                </div>
+                <p id="loginError" class="login-error" aria-live="polite"></p>
+                <button type="submit" class="login-btn">Acessar Protocolo ✦</button>
+            </form>
+            <p class="login-footer">Acesso restrito · Uso interno da clínica</p>
+        </div>
+    </div>
+
+    <header class="site-header">
+        <div class="container">
+            <p class="header-eyebrow">Protocolo Major · Clínica Dra. Valéria Cabral</p>
+            <h1>Scripts de<br><em>Atendimento Magnético</em></h1>
+            <div class="gold-line"></div>
+            <p class="header-sub">5 situações · Scripts prontos para uso imediato</p>
+        </div>
+    </header>
+
+    <nav class="site-nav" id="mainNav" aria-label="Navegação dos Scripts">
+        <!-- Rendered dynamically by app.js -->
+    </nav>
+
+    <main class="main-content">
+        <div class="container" id="mainContent" aria-live="polite">
+            <!-- Section Content rendered dynamically by app.js -->
+        </div>
+
+        <div class="container">
+            <nav class="bottom-nav" aria-label="Paginação">
+                <button class="nav-arrow" id="prevBtn" disabled>← Anterior</button>
+                <span class="nav-counter" id="navCounter" aria-live="polite">
+                    <span>01</span> / 05
+                </span>
+                <button class="nav-arrow" id="nextBtn">Próximo →</button>
+            </nav>
+        </div>
+    </main>
+
+</body>
+
+</html>

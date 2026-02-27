@@ -1,0 +1,919 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
+
+:root {
+  /* Alto Luxo Palette */
+  --navy: #0d1b2e;
+  --navy-mid: #142237;
+  --navy-light: #1c2f47;
+
+  --gold: #c9a84c;
+  --gold-light: #e2c97e;
+  --gold-pale: #f5e9c8;
+
+  --cream: #f8f4ec;
+  --cream-dark: #ede6d6;
+
+  --text-light: #d4c9b0;
+  --text-muted: #8a9ab5;
+
+  /* Geometria "Net/Sharp" (Extremism -> 0px to 2px instead of 16px) */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-btn: 2px;
+
+  /* Espaçamento 8pt System */
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-20: 80px;
+
+  /* Transitions */
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* =========================================================================
+   Reset & Base
+   ========================================================================= */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--navy);
+  color: var(--cream);
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Decorative WhatsApp Pattern Layer */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
+  background-repeat: repeat;
+  background-size: 350px;
+  opacity: 0.12;
+  /* Deixa o padrão sutil misturado com a cor principal */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Gold Gradient Layer for Depth */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 80% 10%, rgba(201, 168, 76, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(201, 168, 76, 0.04) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* =========================================================================
+   Typography & Typography Brutalism Touches
+   ========================================================================= */
+h1,
+h2,
+h3,
+.serif {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+strong {
+  color: var(--gold-light);
+  font-weight: 500;
+}
+
+button {
+  font-family: 'Jost', sans-serif;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+textarea {
+  font-family: monospace;
+}
+
+/* =========================================================================
+   Layout Structure
+   ========================================================================= */
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* =========================================================================
+   Header (Typographic Focus)
+   ========================================================================= */
+.site-header {
+  text-align: center;
+  padding: var(--sp-16) var(--sp-6) var(--sp-12);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+.header-eyebrow {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--sp-4);
+  opacity: 0;
+  animation: fadeUp 0.8s var(--ease-smooth) 0.2s forwards;
+}
+
+.site-header h1 {
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  color: var(--cream);
+  margin-bottom: var(--sp-4);
+  opacity: 0;
+  animation: fadeUp 0.8s var(--ease-smooth) 0.4s forwards;
+}
+
+.header-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  opacity: 0;
+  animation: fadeUp 0.8s var(--ease-smooth) 0.6s forwards;
+}
+
+.gold-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: var(--sp-6) auto;
+}
+
+/* =========================================================================
+   Navigation (Tabs)
+   ========================================================================= */
+.site-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  padding: 0 var(--sp-6);
+  overflow-x: auto;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+  scrollbar-width: none;
+  animation: fadeIn 0.8s var(--ease-smooth) 0.8s both;
+  position: relative;
+  z-index: 10;
+}
+
+.site-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-btn {
+  flex-shrink: 0;
+  padding: var(--sp-5) var(--sp-6);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  position: relative;
+  transition: color 0.3s var(--ease-smooth);
+  white-space: nowrap;
+}
+
+.tab-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transition: transform 0.4s var(--ease-spring);
+  transform-origin: left;
+}
+
+.tab-btn:hover {
+  color: var(--cream);
+}
+
+.tab-btn.active {
+  color: var(--gold-light);
+}
+
+.tab-btn.active::after {
+  transform: scaleX(1);
+}
+
+/* =========================================================================
+   Main Content Area
+   ========================================================================= */
+.main-content {
+  padding: var(--sp-12) var(--sp-6) var(--sp-20);
+}
+
+.script-section {
+  display: none;
+  animation: fadeUpLayer 0.6s var(--ease-smooth) forwards;
+}
+
+.script-section.active {
+  display: block;
+}
+
+/* Section Header styling */
+.section-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-6);
+  margin-bottom: var(--sp-12);
+}
+
+.section-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.5rem, 6vw, 5.5rem);
+  color: rgba(201, 168, 76, 0.15);
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: -8px;
+}
+
+.section-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--sp-2);
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  color: var(--cream);
+  margin-bottom: var(--sp-3);
+  letter-spacing: -0.5px;
+}
+
+.section-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+/* Tags/Rules */
+.rule-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  background: rgba(201, 168, 76, 0.08);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 100px;
+  /* One exception to sharp geometry for a tag look */
+  padding: 6px var(--sp-4);
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--gold-light);
+  margin-bottom: var(--sp-8);
+}
+
+.rule-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.alert-box {
+  background: rgba(180, 60, 60, 0.05);
+  border: 1px solid rgba(200, 80, 80, 0.15);
+  border-left: 2px solid #c86060;
+  border-radius: var(--radius-sm);
+  padding: var(--sp-4) var(--sp-5);
+  margin: var(--sp-5) 0 var(--sp-8) 0;
+  font-size: 13px;
+  color: #d4a0a0;
+  line-height: 1.6;
+}
+
+.alert-box strong {
+  color: #e8b0b0;
+}
+
+/* =========================================================================
+   Dividers
+   ========================================================================= */
+.script-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  margin: var(--sp-10) 0 var(--sp-6) 0;
+}
+
+.script-divider::before,
+.script-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(201, 168, 76, 0.15);
+}
+
+.script-divider span {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.7;
+}
+
+/* =========================================================================
+   Conversation Bubbles
+   ========================================================================= */
+.conversation {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-10);
+}
+
+.bubble-row {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: flex-end;
+}
+
+.bubble-row.patient {
+  justify-content: flex-start;
+}
+
+.bubble-row.clinic {
+  justify-content: flex-end;
+}
+
+.bubble-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.bubble-row.patient .bubble-avatar {
+  background: var(--navy-mid);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+}
+
+.bubble-row.clinic .bubble-avatar {
+  background: linear-gradient(135deg, var(--gold), #a8863c);
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.bubble-wrapper {
+  max-width: 75%;
+  display: flex;
+  flex-direction: column;
+}
+
+.bubble-row.clinic .bubble-wrapper {
+  align-items: flex-end;
+}
+
+.bubble-row.patient .bubble-wrapper {
+  align-items: flex-start;
+}
+
+.bubble-label {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.bubble-row.clinic .bubble-label {
+  text-align: right;
+}
+
+.bubble {
+  padding: var(--sp-4) var(--sp-5);
+  font-size: 14px;
+  line-height: 1.65;
+  position: relative;
+  /* Sharp UI */
+  border-radius: var(--radius-sm);
+}
+
+.bubble-row.patient .bubble {
+  background: var(--navy-mid);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--text-light);
+  border-bottom-left-radius: 0;
+}
+
+.bubble-row.clinic .bubble {
+  background: linear-gradient(145deg, #172a42, #111d2d);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  color: var(--cream);
+  border-bottom-right-radius: 0;
+  /* subtle shadow */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================================================
+   Tip Box
+   ========================================================================= */
+.tip-box {
+  background: rgba(201, 168, 76, 0.04);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-left: 2px solid var(--gold);
+  border-radius: var(--radius-sm);
+  padding: var(--sp-4) var(--sp-5);
+  margin: var(--sp-6) 0;
+  display: flex;
+  gap: var(--sp-3);
+  align-items: flex-start;
+}
+
+.tip-icon {
+  font-size: 16px;
+  color: var(--gold);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.tip-box p {
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.65;
+}
+
+/* =========================================================================
+   Copy Interactions
+   ========================================================================= */
+.copy-target {
+  display: none;
+  /* hidden field just to store text to copy */
+}
+
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  background: transparent;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: var(--radius-btn);
+  padding: 10px var(--sp-5);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: var(--sp-4);
+  transition: all 0.3s var(--ease-spring);
+}
+
+.copy-btn:hover {
+  background: rgba(201, 168, 76, 0.08);
+  border-color: var(--gold);
+  color: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(201, 168, 76, 0.1);
+}
+
+.copy-btn:active {
+  transform: translateY(0);
+}
+
+.copy-btn.copied {
+  background: rgba(80, 180, 100, 0.1);
+  border-color: #61b861;
+  color: #61b861;
+}
+
+/* =========================================================================
+   Bubble Copy Button (per-message)
+   ========================================================================= */
+.bubble-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: var(--sp-2);
+  padding: 5px 10px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid rgba(201, 168, 76, 0.12);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition:
+    color 0.25s var(--ease-smooth),
+    border-color 0.25s var(--ease-smooth),
+    background 0.25s var(--ease-smooth),
+    transform 0.2s var(--ease-spring),
+    box-shadow 0.25s var(--ease-smooth);
+  /* Show subtly by default so user knows it's there */
+  opacity: 0.55;
+}
+
+.bubble-copy-btn svg {
+  flex-shrink: 0;
+  transition: stroke 0.25s var(--ease-smooth), transform 0.25s var(--ease-spring);
+}
+
+.bubble-row.clinic .bubble-copy-btn {
+  /* Align with bubble end (right) */
+  align-self: flex-end;
+}
+
+/* On hover: full visibility + gold accent */
+.bubble-copy-btn:hover {
+  opacity: 1;
+  color: var(--gold-light);
+  border-color: rgba(201, 168, 76, 0.35);
+  background: rgba(201, 168, 76, 0.06);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(201, 168, 76, 0.08);
+}
+
+.bubble-copy-btn:hover svg {
+  transform: scale(1.1);
+}
+
+.bubble-copy-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Copied state: green checkmark feedback */
+.bubble-copy-btn.copied {
+  opacity: 1;
+  color: #6dbf7e;
+  border-color: rgba(100, 190, 120, 0.35);
+  background: rgba(80, 180, 100, 0.07);
+  pointer-events: none;
+}
+
+.bubble-copy-btn.copied svg {
+  stroke: #6dbf7e;
+}
+
+/* =========================================================================
+   Bottom Navigation Footer
+   ========================================================================= */
+.bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--sp-16);
+  padding-top: var(--sp-8);
+  border-top: 1px solid rgba(201, 168, 76, 0.15);
+}
+
+.nav-arrow {
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: var(--sp-3) var(--sp-6);
+  border-radius: var(--radius-btn);
+  transition: all 0.3s var(--ease-spring);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.nav-arrow:hover:not(:disabled) {
+  background: rgba(201, 168, 76, 0.08);
+  border-color: var(--gold);
+}
+
+.nav-arrow:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+.nav-counter {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+}
+
+.nav-counter span {
+  color: var(--gold);
+  font-size: 15px;
+}
+
+/* =========================================================================
+   Animations
+   ========================================================================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUpLayer {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================================================================
+   Responsive Breakpoints
+   ========================================================================= */
+@media (max-width: 600px) {
+  .section-header {
+    flex-direction: column;
+    gap: var(--sp-3);
+  }
+
+  .bubble-wrapper {
+    max-width: 85%;
+  }
+
+  .bubble {
+    font-size: 13px;
+    padding: var(--sp-3) var(--sp-4);
+  }
+
+  .tab-btn {
+    padding: var(--sp-4);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .site-nav {
+    padding: 0 var(--sp-4);
+    justify-content: flex-start;
+  }
+
+  .main-content {
+    padding: var(--sp-10) var(--sp-4) var(--sp-16);
+  }
+}
+
+/* =========================================================================
+   Login Overlay
+   ========================================================================= */
+.login-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-6);
+  background: var(--navy);
+  animation: fadeIn 0.4s var(--ease-smooth) forwards;
+}
+
+/* Decorative background inhaerited from body::before and body::after
+   but we need a static layer too */
+.login-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201, 168, 76, 0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 50% 100%, rgba(201, 168, 76, 0.04) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.login-overlay.hidden {
+  animation: fadeOut 0.5s var(--ease-smooth) forwards;
+  pointer-events: none;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.login-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  animation: fadeUp 0.7s var(--ease-spring) 0.1s both;
+}
+
+/* Branding block */
+.login-logo {
+  margin-bottom: var(--sp-10);
+}
+
+.login-eyebrow {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: var(--sp-4) 0 var(--sp-3);
+}
+
+.login-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 300;
+  color: var(--cream);
+  line-height: 1.1;
+  margin-bottom: var(--sp-4);
+}
+
+.login-logo-line {
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0 auto;
+}
+
+/* Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-6);
+}
+
+.login-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+.login-field label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.login-field input {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: var(--radius-sm);
+  padding: 14px var(--sp-4);
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--cream);
+  outline: none;
+  transition: border-color 0.3s var(--ease-smooth), background 0.3s;
+}
+
+.login-field input::placeholder {
+  color: rgba(138, 154, 181, 0.5);
+}
+
+.login-field input:focus {
+  border-color: rgba(201, 168, 76, 0.5);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.login-field input.input-error {
+  border-color: rgba(200, 80, 80, 0.6);
+  background: rgba(200, 80, 80, 0.04);
+}
+
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 48px;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+  transition: opacity 0.2s var(--ease-smooth);
+}
+
+.password-toggle:hover,
+.password-toggle.active {
+  opacity: 1;
+}
+
+.password-toggle .eye-icon {
+  font-size: 16px;
+  filter: grayscale(1);
+}
+
+.login-error {
+  font-size: 12px;
+  color: #d48080;
+  letter-spacing: 0.5px;
+  min-height: 18px;
+  text-align: center;
+}
+
+.login-btn {
+  margin-top: var(--sp-2);
+  padding: 16px var(--sp-6);
+  background: linear-gradient(135deg, var(--gold), #a8863c);
+  border: none;
+  border-radius: var(--radius-btn);
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--navy);
+  cursor: pointer;
+  transition: transform 0.2s var(--ease-spring), box-shadow 0.3s;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201, 168, 76, 0.25);
+}
+
+.login-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.login-footer {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(138, 154, 181, 0.4);
+  margin-top: var(--sp-8);
+}
