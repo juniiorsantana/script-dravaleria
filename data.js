@@ -30,6 +30,13 @@ export const scriptsData = [
         conversations: [
           { speaker: "clinic", label: "Secretária — Proativa", text: "Oi, <strong>[Nome]</strong>! Como está? 🌷<br><br>Você havia entrado em contato conosco pelo Instagram — adorei receber seu contato! Para que a Dra. Valéria possa preparar algo especial para você, me conta: o que você gostaria de melhorar ou realçar no seu sorriso?", avatar: "VC" }
         ]
+      },
+      {
+        scenarioTitle: "Cenário 4: Paciente pergunta sobre pagamento ou parcelamento",
+        conversations: [
+          { speaker: "patient", label: "Paciente", text: "Vocês parcelam? Quais as formas de pagamento?", avatar: "P" },
+          { speaker: "clinic", label: "Secretária — Facilitadora e Curiosa", text: "Olá, <strong>[Nome]</strong>! Aqui na clínica nós temos <strong>ótimas facilidades de pagamento</strong> e trabalhamos com opções flexíveis de parcelamento para ajudar você a realizar seu tratamento com toda a tranquilidade! 🤍<br><br>Como cada caso é 100% personalizado, a Dra. Valéria explica todas as condições e opções de investimento logo após a sua avaliação gratuita, para desenhar o que melhor se encaixa no seu projeto.<br><br>Que tal agendarmos a sua avaliação para você conversar com ela e conhecer essas opções de perto? ✨", avatar: "VC" }
+        ]
       }
     ],
     tips: [
@@ -46,6 +53,9 @@ CENÁRIO 2 — Price Shopper:
 
 CENÁRIO 3 — Follow-up Instagram:
 "Você havia entrado em contato conosco pelo Instagram — adorei receber seu contato! Para que a Dra. Valéria possa preparar algo especial para você, me conta: o que você gostaria de melhorar ou realçar?"
+
+CENÁRIO 4 — Formas de Pagamento e Parcelamento:
+"Olá, [Nome]! Aqui na clínica nós temos ótimas facilidades de pagamento e trabalhamos com opções flexíveis de parcelamento para ajudar você a realizar seu tratamento com toda a tranquilidade! 🤍 Como cada caso é 100% personalizado, a Dra. Valéria explica todas as condições e opções de investimento logo após a sua avaliação gratuita, para desenhar o que melhor se encaixa no seu projeto. Que tal agendarmos a sua avaliação para você conversar com ela e conhecer essas opções de perto? ✨"
 
 REGRA DE OURO: Nunca use a palavra "triagem". Nunca informe preço sem criar conexão. Responda em até 10 minutos.`
   },
@@ -105,7 +115,7 @@ REGRA: Faça o paciente falar sobre si mesmo. Quem pergunta, domina a conversa.`
         scenarioTitle: "Cenário A: \"Está caro / não esperava esse valor\"",
         conversations: [
           { speaker: "patient", label: "Paciente", text: "Nossa, não esperava esse valor. Está caro demais para mim.", avatar: "P" },
-          { speaker: "clinic", label: "Secretária — Validação + Reposicionamento", text: "Entendo perfeitamente, <strong>[Nome]</strong>. Esse sentimento é muito comum quando ainda não se conhece toda a experiência que está incluída. 🤍<br><br>O investimento contempla <strong>um horário exclusivo</strong> com a Dra. Valéria, uso de tecnologia de diagnóstico avançada e, principalmente, a segurança de um plano personalizado que evita gastos desnecessários no futuro.<br><br>Estamos falando da <strong>sua saúde e da sua autoestima</strong>, certo? A Dra. Valéria garante que cada detalhe fique exatamente como você deseja.", avatar: "VC" }
+          { speaker: "clinic", label: "Secretária — Validação + Reposicionamento", text: "Entendo perfeitamente, <strong>[Nome]</strong>. É super normal surgir essa dúvida no começo. 🤍<br><br>Por isso a Dra. Valéria começa com uma avaliação gratuita, onde ela analisa seu sorriso e entende exatamente o que você deseja melhorar.<br><br>A partir disso, ela monta um plano personalizado com as melhores opções para o seu caso.<br><br>Posso verificar um horário disponível para você fazer essa avaliação?", avatar: "VC" }
         ]
       },
       {
@@ -119,7 +129,7 @@ REGRA: Faça o paciente falar sobre si mesmo. Quem pergunta, domina a conversa.`
         scenarioTitle: "Cenário C: \"Só quero saber o preço\"",
         conversations: [
           { speaker: "patient", label: "Paciente", text: "Não precisa de tudo isso, só me passa o preço mesmo.", avatar: "P" },
-          { speaker: "clinic", label: "Secretária — Reposicionamento Elegante", text: "Entendo sua pressa, <strong>[Nome]</strong>! 😊 Mas como a Dra. Valéria trabalha de forma integrativa e <strong>cada sorriso é único</strong>, passar um valor agora seria impreciso e até antiético da nossa parte — seu caso merece atenção real.<br><br>Ela precisa te avaliar pessoalmente para desenhar o investimento exato. Posso te ajudar a garantir um horário?", avatar: "VC" }
+          { speaker: "clinic", label: "Secretária — Reposicionamento Elegante", text: "Entendo sua pressa, <strong>[Nome]</strong>! 😊<br><br>Para te passar qualquer valor com responsabilidade, a Dra. Valéria primeiro precisa entender seu caso com calma. Por isso fazemos uma avaliação gratuita, onde ela analisa seu sorriso e explica as melhores possibilidades de tratamento.<br><br>Nesse momento, você também recebe um plano personalizado, com todas as opções e valores claros para o seu caso específico.<br><br>Se quiser, posso verificar agora um horário disponível para sua avaliação.", avatar: "VC" }
         ]
       },
       {
@@ -145,13 +155,13 @@ REGRA: Faça o paciente falar sobre si mesmo. Quem pergunta, domina a conversa.`
     copyText: `Scripts de Objeção — Dra. Valéria Cabral
 
 CENÁRIO A — "Está caro":
-"Entendo perfeitamente, [Nome]. Esse sentimento é muito comum quando ainda não se conhece toda a experiência incluída. O investimento contempla um horário exclusivo com a Dra. Valéria, uso de tecnologia de diagnóstico avançada e a segurança de um plano personalizado que evita gastos desnecessários no futuro."
+"Entendo perfeitamente, [Nome]. É super normal surgir essa dúvida no começo. 🤍 Por isso a Dra. Valéria começa com uma avaliação gratuita, onde ela analisa seu sorriso e entende exatamente o que você deseja melhorar. A partir disso, ela monta um plano personalizado com as melhores opções para o seu caso. Posso verificar um horário disponível para você fazer essa avaliação?"
 
 CENÁRIO B — "Vou falar com meu marido/esposa":
 "Com certeza, [Nome]! É uma decisão importante para a família. Para facilitar, posso te enviar um vídeo curto onde a Dra. Valéria explica a metodologia? Assim vocês assistem juntos. Enquanto isso, consigo reservar essa vaga por 24h para você não perder a oportunidade."
 
 CENÁRIO C — "Só quero o preço":
-"Entendo sua pressa, [Nome]! Mas como a Dra. Valéria trabalha de forma integrativa e cada sorriso é único, passar um valor agora seria impreciso e antiético da nossa parte. Ela precisa te avaliar pessoalmente."
+"Entendo sua pressa, [Nome]! 😊 Para te passar qualquer valor com responsabilidade, a Dra. Valéria primeiro precisa entender seu caso com calma. Por isso fazemos uma avaliação gratuita, onde ela analisa seu sorriso e explica as melhores possibilidades de tratamento. Nesse momento, você também recebe um plano personalizado, com todas as opções e valores claros para o seu caso específico. Se quiser, posso verificar agora um horário disponível para sua avaliação."
 
 CENÁRIO D — "Moro muito longe":
 "Entendo, [Nome]! Realmente a correria dificulta. Mas sabia que temos pacientes de várias cidades? Podemos marcar sua avaliação e já deixamos um horário maior reservado para iniciar o tratamento no mesmo dia."
@@ -222,6 +232,12 @@ REGRA: Nunca suplique. A mensagem 3 ativa o gatilho de perda e frequentemente ge
         ]
       },
       {
+        scenarioTitle: "Contato 1.2 — Paciente não respondeu à confirmação",
+        conversations: [
+          { speaker: "clinic", label: "Secretária — Lembrete e Manutenção de Vaga", text: "Oi, <strong>[Nome]</strong>! Tudo bem? Passando para lembrar que nossa confirmação para amanhã às <strong>[horário]</strong> está pendente. 😊<br><br>Sei que a correria do dia a dia é grande! Mas como temos uma lista de espera, preciso apenas de um breve 'ok' seu para mantermos o horário que a Dra. Valéria reservou com tanto carinho para você, combinado? 🤍", avatar: "VC" }
+        ]
+      },
+      {
         scenarioTitle: "Contato 2 — Manhã da consulta",
         conversations: [
           { speaker: "clinic", label: "Secretária — Boas-vindas Antecipadas", text: "Bom dia, <strong>[Nome]</strong>! ☀️<br><br>Aqui está o mapa para facilitar sua chegada: <strong>[link Google Maps]</strong><br><br>O cappuccino já está te esperando quentinho! Até logo 🤍", avatar: "VC" }
@@ -254,6 +270,9 @@ REGRA: Nunca suplique. A mensagem 3 ativa o gatilho de perda e frequentemente ge
 
 CONTATO 1 (24h antes):
 "Olá, [Nome]! Tudo pronto para te recebermos amanhã às [horário] 🌟 A Dra. Valéria já está estudando o seu caso para preparar o melhor para você. Estamos ansiosas para te conhecer! Caso precise reagendar, contamos com um aviso com antecedência para não comprometer a qualidade do seu atendimento 🤍"
+
+CONTATO 1.5 (Caso não responda ao Contato 1 algumas horas depois):
+"Oi, [Nome]! Tudo bem? Passando para lembrar que nossa confirmação para amanhã às [horário] está pendente. 😊 Sei que a correria do dia a dia é grande! Mas como temos uma lista de espera, preciso apenas de um breve 'ok' seu para mantermos o horário que a Dra. Valéria reservou com tanto carinho para você, combinado? 🤍"
 
 CONTATO 2 (manhã da consulta):
 "Bom dia, [Nome]! ☀️ Aqui está o mapa para facilitar sua chegada: [LINK GOOGLE MAPS] O cappuccino já está te esperando quentinho! Até logo 🤍"
