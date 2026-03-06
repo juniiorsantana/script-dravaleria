@@ -15,7 +15,7 @@ export const scriptsData = [
           { speaker: "clinic", label: "Secretária — Gancho Inicial", text: "Olá, <strong>[Nome do Paciente]</strong>! Que alegria receber seu contato 🤍 Sou a <strong>[Seu Nome]</strong>, assistente da Dra. Valéria Cabral. Como você está hoje?", avatar: "VC" },
           { speaker: "clinic", label: "Secretária — Diagnóstico Emocional", text: "Para que eu possa te ajudar da melhor forma possível, me conta um pouquinho: <strong>o que te incomoda no seu sorriso hoje?</strong> É uma questão estética ou de dor/função?", avatar: "VC" },
           { speaker: "patient", label: "Paciente responde", text: "Perdi um dente há uns meses, fica bem aparente quando sorrio...", avatar: "P" },
-          { speaker: "clinic", label: "Secretária — Construção de Valor", text: "Entendo perfeitamente, <strong>[Nome]</strong>. A Dra. Valéria é especialista exatamente nesse [ tipo do caso ] 🦷<br><br>Ela reserva <strong>uma hora exclusiva</strong> para te ouvir pessoalmente e montar um plano 100% personalizado para você. A nossa avaliação é <strong>gratuita</strong>!<br><br>Tenho uma vaga na <strong>terça às 14h</strong> ou <strong>quinta às 10h</strong>. Qual fica melhor na sua agenda?", avatar: "VC" }
+          { speaker: "clinic", label: "Secretária — Construção de Valor", text: "Entendo perfeitamente, <strong>[Nome]</strong>. A Dra. Valéria é especialista exatamente nesse [ tipo do caso ] 🦷<br><br>Ela reserva <strong>um horário exclusivo</strong> para te ouvir pessoalmente e montar um plano 100% personalizado para você. A nossa avaliação é <strong>gratuita</strong>!<br><br>Tenho uma vaga na <strong>terça às 14h</strong> ou <strong>quinta às 10h</strong>. Qual fica melhor na sua agenda?", avatar: "VC" }
         ]
       },
       {
@@ -63,7 +63,7 @@ REGRA DE OURO: Nunca use a palavra "triagem". Nunca informe preço sem criar con
         conversations: [
           { speaker: "clinic", label: "Secretária — Abertura", text: "Para que a Dra. Valéria possa preparar o melhor para você, me conta um pouquinho: <strong>o que te incomoda hoje</strong> ou o que você <strong>gostaria de realçar</strong> no seu sorriso? 🌸", avatar: "VC" },
           { speaker: "patient", label: "Paciente", text: "Perdi um dente há uns meses, fica bem aparente quando sorrio...", avatar: "P" },
-          { speaker: "clinic", label: "Secretária — Construção de Valor", text: "Entendo perfeitamente, <strong>[Nome]</strong>. A Dra. Valéria é especialista exatamente nesse tipo de caso.<br><br>Ela reserva <strong>uma hora exclusiva</strong> para te ouvir pessoalmente e montar um plano 100% personalizado para você. A avaliação é <strong>gratuita</strong>.", avatar: "VC" }
+          { speaker: "clinic", label: "Secretária — Construção de Valor", text: "Entendo perfeitamente, <strong>[Nome]</strong>. A Dra. Valéria é especialista exatamente nesse tipo de caso.<br><br>Ela reserva <strong>um horário exclusivo</strong> para te ouvir pessoalmente e montar um plano 100% personalizado para você. A avaliação é <strong>gratuita</strong>.", avatar: "VC" }
         ]
       },
       {
@@ -98,14 +98,14 @@ REGRA: Faça o paciente falar sobre si mesmo. Quem pergunta, domina a conversa.`
     label: "Script · Gestão de Objeções",
     title: "Objeções:<br>Preço & Convênio",
     desc: "Quando o paciente reage ao valor ou ao formato de atendimento. Valide a emoção, reposicione como investimento exclusivo e reafirme o diferencial.",
-    rule: "Use 'investimento', nunca 'preço'. Para convênio, ancore no 'tempo exclusivo e longo'.",
+    rule: "Use 'investimento', nunca 'preço'. Para convênio, ancore no 'atendimento exclusivo'.",
     alert: null,
     scenarios: [
       {
         scenarioTitle: "Cenário A: \"Está caro / não esperava esse valor\"",
         conversations: [
           { speaker: "patient", label: "Paciente", text: "Nossa, não esperava esse valor. Está caro demais para mim.", avatar: "P" },
-          { speaker: "clinic", label: "Secretária — Validação + Reposicionamento", text: "Entendo perfeitamente, <strong>[Nome]</strong>. Esse sentimento é muito comum quando ainda não se conhece toda a experiência que está incluída. 🤍<br><br>O investimento contempla <strong>uma hora exclusiva</strong> com a Dra. Valéria, uso de tecnologia de diagnóstico avançada e, principalmente, a segurança de um plano personalizado que evita gastos desnecessários no futuro.<br><br>Estamos falando da <strong>sua saúde e da sua autoestima</strong>, certo? A Dra. Valéria garante que cada detalhe fique exatamente como você deseja.", avatar: "VC" }
+          { speaker: "clinic", label: "Secretária — Validação + Reposicionamento", text: "Entendo perfeitamente, <strong>[Nome]</strong>. Esse sentimento é muito comum quando ainda não se conhece toda a experiência que está incluída. 🤍<br><br>O investimento contempla <strong>um horário exclusivo</strong> com a Dra. Valéria, uso de tecnologia de diagnóstico avançada e, principalmente, a segurança de um plano personalizado que evita gastos desnecessários no futuro.<br><br>Estamos falando da <strong>sua saúde e da sua autoestima</strong>, certo? A Dra. Valéria garante que cada detalhe fique exatamente como você deseja.", avatar: "VC" }
         ]
       },
       {
@@ -126,26 +126,26 @@ REGRA: Faça o paciente falar sobre si mesmo. Quem pergunta, domina a conversa.`
         scenarioTitle: "Cenário D: \"Moro muito longe / Fica fora de mão\"",
         conversations: [
           { speaker: "patient", label: "Paciente", text: "Gostei muito, mas eu moro em outra cidade — fica muito fora de mão ir até a clínica.", avatar: "P" },
-          { speaker: "clinic", label: "Secretária — Flexibilidade & Solução", text: "Entendo, <strong>[Nome]</strong>! Realmente a correria dificulta. Mas sabia que temos pacientes de várias cidades que vêm passar o dia aqui com a gente? 🌟<br><br>Para facilitar ao máximo, podemos marcar sua avaliação e, caso queira, já deixamos um <strong>tempo maior reservado</strong> para você iniciar o tratamento no mesmo dia. Assim você economiza viagens. O que acha dessa flexibilidade? 🤍", avatar: "VC" }
+          { speaker: "clinic", label: "Secretária — Flexibilidade & Solução", text: "Entendo, <strong>[Nome]</strong>! Realmente a correria dificulta. Mas sabia que temos pacientes de várias cidades que vêm passar o dia aqui com a gente? 🌟<br><br>Para facilitar ao máximo, podemos marcar sua avaliação e, caso queira, já deixamos um <strong>horário maior reservado</strong> para você iniciar o tratamento no mesmo dia. Assim você economiza viagens. O que acha dessa flexibilidade? 🤍", avatar: "VC" }
         ]
       },
       {
         scenarioTitle: "Cenário E: \"Vocês atendem por Convênio (Bradesco, Unimed)?\"",
         conversations: [
           { speaker: "patient", label: "Paciente", text: "Vocês atendem pelo plano Bradesco / Unimed / Amil?", avatar: "P" },
-          { speaker: "clinic", label: "Secretária — Ancoragem Premium + Reembolso", text: "Olá, <strong>[Nome]</strong>! 🌷<br><br>A Dra. Valéria atende de forma particular para garantir um tempo longo, exclusivo e com os melhores materiais do mercado para você.<br><br>Nós não trabalhamos diretamente com planos, mas emitimos todos os recibos e notas para que você possa <strong>pedir o reembolso</strong> no seu convênio!<br><br>Como a nossa avaliação é <strong>gratuita</strong>, seria um prazer te receber para a Dra. montar seu planejamento. Posso verificar um horário para você? 🤍", avatar: "VC" }
+          { speaker: "clinic", label: "Secretária — Ancoragem Premium + Reembolso", text: "Olá, <strong>[Nome]</strong>! 🌷<br><br>A Dra. Valéria atende de forma particular para garantir um atendimento personalizado, exclusivo e com os melhores materiais do mercado para você.<br><br>Nós não trabalhamos diretamente com planos, mas emitimos todos os recibos e notas para que você possa <strong>pedir o reembolso</strong> no seu convênio!<br><br>Como a nossa avaliação é <strong>gratuita</strong>, seria um prazer te receber para a Dra. montar seu planejamento. Posso verificar um horário para você? 🤍", avatar: "VC" }
         ]
       }
     ],
     tips: [
       { text: "<strong>Lidando com Preço:</strong> A objeção de preço é quase sempre uma objeção de valor — o paciente ainda não enxergou o que está incluído no investimento. Jamais inicie uma argumentação baixando o preço." },
-      { text: "<strong>Gatilho de Convênio:</strong> Ao dizer que o atendimento é particular 'PARA garantir tempo longo e exclusivo', o paciente entende que o convênio limitaria a qualidade. Isso eleva a percepção de valor." }
+      { text: "<strong>Gatilho de Convênio:</strong> Ao dizer que o atendimento é particular 'PARA garantir um atendimento personalizado, exclusivo e com os melhores materiais do mercado', o paciente entende que o convênio limitaria a qualidade. Isso eleva a percepção de valor." }
     ],
     copyBtnText: "Copiar Scripts de Objeção",
     copyText: `Scripts de Objeção — Dra. Valéria Cabral
 
 CENÁRIO A — "Está caro":
-"Entendo perfeitamente, [Nome]. Esse sentimento é muito comum quando ainda não se conhece toda a experiência incluída. O investimento contempla uma hora exclusiva com a Dra. Valéria, uso de tecnologia de diagnóstico avançada e a segurança de um plano personalizado que evita gastos desnecessários no futuro."
+"Entendo perfeitamente, [Nome]. Esse sentimento é muito comum quando ainda não se conhece toda a experiência incluída. O investimento contempla um horário exclusivo com a Dra. Valéria, uso de tecnologia de diagnóstico avançada e a segurança de um plano personalizado que evita gastos desnecessários no futuro."
 
 CENÁRIO B — "Vou falar com meu marido/esposa":
 "Com certeza, [Nome]! É uma decisão importante para a família. Para facilitar, posso te enviar um vídeo curto onde a Dra. Valéria explica a metodologia? Assim vocês assistem juntos. Enquanto isso, consigo reservar essa vaga por 24h para você não perder a oportunidade."
@@ -154,10 +154,10 @@ CENÁRIO C — "Só quero o preço":
 "Entendo sua pressa, [Nome]! Mas como a Dra. Valéria trabalha de forma integrativa e cada sorriso é único, passar um valor agora seria impreciso e antiético da nossa parte. Ela precisa te avaliar pessoalmente."
 
 CENÁRIO D — "Moro muito longe":
-"Entendo, [Nome]! Realmente a correria dificulta. Mas sabia que temos pacientes de várias cidades? Podemos marcar sua avaliação e já deixamos um tempo maior reservado para iniciar o tratamento no mesmo dia."
+"Entendo, [Nome]! Realmente a correria dificulta. Mas sabia que temos pacientes de várias cidades? Podemos marcar sua avaliação e já deixamos um horário maior reservado para iniciar o tratamento no mesmo dia."
 
 CENÁRIO E — Convênio / Plano de Saúde:
-"A Dra. Valéria atende de forma particular para garantir um tempo longo, exclusivo e com os melhores materiais do mercado. Não trabalhamos diretamente com planos, mas emitimos todos os recibos para você pedir o reembolso no convênio! Como a avaliação é gratuita, seria um prazer te receber."
+"A Dra. Valéria atende de forma particular para garantir um atendimento personalizado, exclusivo e com os melhores materiais do mercado. Não trabalhamos diretamente com planos, mas emitimos todos os recibos para você pedir o reembolso no convênio! Como a avaliação é gratuita, seria um prazer te receber."
 
 REGRA DE OURO: Valide a emoção primeiro, contorne oferecendo solução.`
   },
@@ -185,7 +185,7 @@ REGRA DE OURO: Valide a emoção primeiro, contorne oferecendo solução.`
       {
         scenarioTitle: "Mensagem 3 — Encerramento Seletivo (gatilho de perda)",
         conversations: [
-          { speaker: "clinic", label: "Secretária — Gatilho de Escassez", text: "Olá, <strong>[Nome]</strong>. Imaginei que sua semana deve estar bem corrida! 😊<br><br>Estou encerrando seu atendimento por hora no sistema para <strong>liberar a vaga para nossa lista de espera</strong>. Mas fico à disposição quando quiser retomar seu projeto de autocuidado — será um prazer te receber. 🤍", avatar: "VC" }
+          { speaker: "clinic", label: "Secretária — Gatilho de Escassez", text: "Olá, <strong>[Nome]</strong>. Imaginei que sua semana deve estar bem corrida! 😊<br><br>Estou encerrando seu atendimento por ora no sistema para <strong>liberar a vaga para nossa lista de espera</strong>. Mas fico à disposição quando quiser retomar seu projeto de autocuidado — será um prazer te receber. 🤍", avatar: "VC" }
         ]
       }
     ],
@@ -202,7 +202,7 @@ MENSAGEM 2 (48h após silêncio — enviar com foto/vídeo de resultado):
 "Oi, [Nome]! Veja que incrível este resultado de um caso muito parecido com o que você busca 🦷✨ [FOTO/VÍDEO] Imagina você com esse resultado?"
 
 MENSAGEM 3 — Encerramento Seletivo (gatilho de perda):
-"Olá, [Nome]. Imaginei que sua semana deve estar bem corrida! 😊 Estou encerrando seu atendimento por hora no sistema para liberar a vaga para nossa lista de espera. Mas fico à disposição quando quiser retomar seu projeto de autocuidado — será um prazer te receber. 🤍"
+"Olá, [Nome]. Imaginei que sua semana deve estar bem corrida! 😊 Estou encerrando seu atendimento por ora no sistema para liberar a vaga para nossa lista de espera. Mas fico à disposição quando quiser retomar seu projeto de autocuidado — será um prazer te receber. 🤍"
 
 REGRA: Nunca suplique. A mensagem 3 ativa o gatilho de perda e frequentemente gera resposta imediata.`
   },
@@ -228,9 +228,21 @@ REGRA: Nunca suplique. A mensagem 3 ativa o gatilho de perda e frequentemente ge
         ]
       },
       {
+        scenarioTitle: "Confirmação — Modelo 1 (Café e Localização)",
+        conversations: [
+          { speaker: "clinic", label: "Secretária — Confirmação Acolhedora", text: "Olá, <strong>[Nome]</strong>!<br><br>Tudo bem? Passando para lembrar que <strong>amanhã</strong> é o dia de cuidar de você aqui na clínica. A Dra. Valéria já está <strong>estudando</strong> seu caso e ansiosa para te receber.<br><br>Segue a <strong>localização</strong> no Google Maps. 📍<br><br>Teremos um <strong>café especial</strong> te esperando! Chegue 10 minutinhos antes para se acomodar. 🤍", avatar: "VC" }
+        ]
+      },
+      {
+        scenarioTitle: "Confirmação — Modelo 2 (Carinho e Preparo)",
+        conversations: [
+          { speaker: "clinic", label: "Secretária — Proximidade", text: "Oi, <strong>[Nome]</strong>! ☀️ Passando rapidinho para confirmar o nosso <strong>[ procedimento ]</strong> <strong>amanhã</strong>.<br><br>A Dra. Valéria já está com tudo preparado, <strong>estudando os detalhes</strong> do seu caso com muito carinho para te receber. Te enviei a <strong>localização</strong> logo acima!<br><br>Venha com calma, temos um <strong>café especial</strong> reservado para você. Se puder chegar uns 10 minutinhos antes, será ótimo para começarmos pontualmente no seu horário. 🤍", avatar: "VC" }
+        ]
+      },
+      {
         scenarioTitle: "Política de cancelamento — comunicar com elegância",
         conversations: [
-          { speaker: "clinic", label: "Secretária — Política de Tolerância", text: "Combinado, <strong>[Nome]</strong>! Seu espaço de uma hora com a Dra. Valéria está garantido. 🌿<br><br>Como trabalhamos com uma lista de espera, pedimos gentilmente que qualquer imprevisto seja avisado com antecedência. Temos uma tolerância de <strong>15 minutos</strong> para não comprometer a qualidade do seu atendimento.<br><br>Estamos ansiosas para te receber! ✨", avatar: "VC" }
+          { speaker: "clinic", label: "Secretária — Política de Tolerância", text: "Olá, <strong>[Nome]</strong>! Seu horário com a Dra. Valéria está garantido. 🌿<br><br>Como trabalhamos com uma lista de espera, pedimos gentilmente que qualquer imprevisto seja avisado com antecedência. Temos uma tolerância de <strong>15 minutos</strong> para não comprometer a qualidade do seu atendimento.<br><br>Estamos ansiosas para te receber! ✨", avatar: "VC" }
         ]
       }
     ],
@@ -246,8 +258,14 @@ CONTATO 1 (24h antes):
 CONTATO 2 (manhã da consulta):
 "Bom dia, [Nome]! ☀️ Aqui está o mapa para facilitar sua chegada: [LINK GOOGLE MAPS] O cappuccino já está te esperando quentinho! Até logo 🤍"
 
+CONFIRMAÇÃO MODELO 1:
+"Olá [Nome]! Tudo bem? Passando para lembrar que amanhã é o dia de cuidar de você aqui na clínica. A Dra. Valéria já está estudando seu caso e ansiosa para te receber. Segue a localização no Google Maps. Teremos um café especial te esperando! Chegue 10 minutinhos antes para se acomodar."
+
+CONFIRMAÇÃO MODELO 2:
+"Oi, [Nome]! ☀️ Passando rapidinho para confirmar o nosso encontro amanhã. A Dra. Valéria já está com tudo preparado, estudando os detalhes do seu caso com muito carinho para te receber. Te enviei a localização logo acima! Venha com calma, temos um café especial reservado para você. Se puder chegar uns 10 minutinhos antes, será ótimo para começarmos pontualmente no seu horário."
+
 POLÍTICA DE CANCELAMENTO:
-"Combinado, [Nome]! Seu espaço de uma hora com a Dra. Valéria está garantido. 🌿 Como trabalhamos com uma lista de espera, pedimos gentilmente que qualquer imprevisto seja avisado com antecedência. Temos uma tolerância de 15 minutos para não comprometer a qualidade do seu atendimento. Estamos ansiosas para te receber! ✨"
+"Combinado, [Nome]! Seu horário com a Dra. Valéria está garantido. 🌿 Como trabalhamos com uma lista de espera, pedimos gentilmente que qualquer imprevisto seja avisado com antecedência. Temos uma tolerância de 15 minutos para não comprometer a qualidade do seu atendimento. Estamos ansiosas para te receber! ✨"
 
 DICA: "A Dra. está estudando seu caso" ativa autoridade + reciprocidade e reduz faltas.`
   },
@@ -275,7 +293,7 @@ DICA: "A Dra. está estudando seu caso" ativa autoridade + reciprocidade e reduz
       {
         scenarioTitle: "Contato 3 — Indicação e Fidelização (30 dias)",
         conversations: [
-          { speaker: "clinic", label: "Secretária — Fidelização", text: "<strong>[Nome]</strong>, já faz um mês desde a sua consulta! 🌷 Esperamos que esteja arrasando com o resultado.<br><br>Lembre-se: se tiver alguma amiga ou familiar que também queira cuidar do sorriso, adoraríamos recebê-la com o mesmo carinho que te recebemos. <strong>Sua indicação é o maior elogio para nós!</strong> 🤍", avatar: "VC" }
+          { speaker: "clinic", label: "Secretária — Fidelização", text: "<strong>[Nome]</strong>, já faz um mês desde a sua consulta! 🌷 Esperamos que esteja satisfeito com o resultado.<br><br>Lembre-se: se tiver alguma amiga ou familiar que também queira cuidar do sorriso, adoraríamos recebê-la com o mesmo carinho que te recebemos. <strong>Sua indicação é o maior elogio para nós!</strong> 🤍", avatar: "VC" }
         ]
       }
     ],
